@@ -4,13 +4,15 @@ import { MainLayout } from "./styles/Layouts";
 
 import Orb from "./components/Orb/orb";
 import Navigation from "./components/navigation/Navigation";
+import { useState } from "react";
 
 function App() {
+  const [active, setActive] = useState(1);
   return (
     <AppStyled bg = {bg}>
     <Orb/>
     <MainLayout>
-       <Navigation/>
+       <Navigation active = {active} setActive = {setActive}/>
     </MainLayout>
     </AppStyled>
   )
