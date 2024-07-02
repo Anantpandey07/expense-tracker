@@ -3,16 +3,9 @@ import styled, {keyframes} from 'styled-components'
 import { useWindowSize } from '../../utils/useWindowSize'
 
 function Orb() {
-  return (
-    <OrbStyled></OrbStyled>
-  )
-}
+  const {width, height} = useWindowSize()
 
-const {width, height} = useWindowSize()
-
-//console.log(width, height)
-
-const moveOrb = keyframes`
+  const moveOrb = keyframes`
     0%{
         transform: translate(0, 0);
     }
@@ -35,5 +28,13 @@ const OrbStyled = styled.div`
     filter: blur(300px);
     animation: ${moveOrb} 10s alternate linear infinite;
     `;
+
+  return (
+    <OrbStyled></OrbStyled>
+  )
+}
+
+
+//console.log(width, height)
 
 export default Orb;
