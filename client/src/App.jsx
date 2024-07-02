@@ -3,13 +3,14 @@ import bg from "./image/bg.png"
 import { MainLayout } from "./styles/Layouts";
 
 import Orb from "./components/Orb/orb";
+import Navigation from "./components/navigation/Navigation";
 
 function App() {
   return (
     <AppStyled bg = {bg}>
     <Orb/>
     <MainLayout>
-    <h1>hiiii</h1>
+       <Navigation/>
     </MainLayout>
     </AppStyled>
   )
