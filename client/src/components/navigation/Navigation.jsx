@@ -34,8 +34,8 @@ function Navigation({active, setActive}) {
 }
 
 const NavStyled = styled.nav`
-    padding: 2rem 1.5rem;
-    width: 374px;
+    padding: 1.2rem 1.2rem;
+    width: 25%;
     height: 100%;
     background: rgba(252, 246, 249, 0.78);
     border: 3px solid #FFFFFF;
@@ -44,15 +44,15 @@ const NavStyled = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
     .user-con{
         height: 100px;
         display: flex;
         align-items: center;
         gap: 1rem;
         img{
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
             background: #fcf6f9;
@@ -77,7 +77,7 @@ const NavStyled = styled.nav`
             grid-template-columns: 40px auto;
             align-items: center;
             margin: .6rem 0;
-            font-weight: 500;
+            font-weight: 400;
             cursor: pointer;
             transition: all .4s ease-in-out;
             color: rgba(34, 34, 96, .6);
@@ -85,7 +85,7 @@ const NavStyled = styled.nav`
             position: relative;
             i{
                 color: rgba(34, 34, 96, 0.6);
-                font-size: 1.4rem;
+                font-size: 1.3rem;
                 transition: all .4s ease-in-out;
             }
         }
@@ -101,7 +101,7 @@ const NavStyled = styled.nav`
             position: absolute;
             left: 0;
             top: 0;
-            width: 4px;
+            width: 2px;
             height: 100%;
             background: #222260;
             border-radius: 0 10px 10px 0;

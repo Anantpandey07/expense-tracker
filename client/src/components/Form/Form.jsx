@@ -8,7 +8,7 @@ import { plus } from '../../utils/Icons';
 
 function Form() {
 
-    const {addIncome} = useGlobalContext()
+    const {addIncome, getIncomes} = useGlobalContext()
 
     const [inputState, setInputState] = useState({
         title: '',
@@ -27,6 +27,7 @@ function Form() {
     const handleSubmit = eve =>{
         eve.preventDefault()
         addIncome(inputState)
+        getIncomes()
     }
 
   return (
@@ -95,13 +96,13 @@ function Form() {
 const FormStyled = styled.form`
 display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     input, textarea, select{
         font-family: inherit;
         font-size: inherit;
         outline: none;
         border: none;
-        padding: .5rem 1rem;
+        padding: .2rem .6rem;
         border-radius: 5px;
         border: 2px solid #fff;
         background: transparent;
