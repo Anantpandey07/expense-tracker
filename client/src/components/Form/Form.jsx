@@ -69,8 +69,7 @@ function Form() {
                     <option value="investments">Investments</option>
                     <option value="stocks">Stocks</option>
                     <option value="bitcoin">Bitcoin</option>
-                    <option value="bank">Bank Transfer</option>  
-                    <option value="youtube">Youtube</option>  
+                    <option value="bank">Bank Transfer</option>   
                     <option value="other">Other</option>  
                 </select>
             </div>
