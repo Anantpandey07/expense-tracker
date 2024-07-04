@@ -148,7 +148,7 @@ const IncomeItemStyled = styled.div`
             .text{
                 display: flex;
                 align-items: center;
-                gap: 0.8rem;
+                gap: 0.6rem;
                 p{
                     display: flex;
                     align-items: center;

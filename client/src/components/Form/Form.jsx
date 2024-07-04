@@ -28,6 +28,13 @@ function Form() {
         eve.preventDefault()
         addIncome(inputState)
         getIncomes()
+        setInputState({
+            title: '',
+            amount: '',
+            date: '',
+            category: '',
+            description: '',
+        })
     }
 
   return (
