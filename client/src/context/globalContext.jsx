@@ -18,15 +18,32 @@ export const GlobalProvider = ({children}) => {
         getIncomes()
     }
 
+    const addExpense = async (expense) =>{
+        const res = await axios.post(`${BASE_URL}add-expense`, expense).catch((er) =>{
+            setErr(er.res.data.message)
+        })
+        getExpenses()
+    }
+
     const getIncomes = async (income) =>{
         const response = await axios.get(`${BASE_URL}get-incomes`)
         setIncomes(response.data)
         //console.log(response.data)
     }
 
+    const getExpenses = async(expense) =>{
+        const res = await axios.get(`${BASE_URL}get-expenses`)
+        setExpenses(res.data)
+    }
+
     const deleteIncome = async (id) =>{
         const response = await axios.delete(`${BASE_URL}delete-income/${id}`)
         getIncomes()
+    }
+
+    const deleteExpense = async (id) =>{
+        const res = await axios.delete(`${BASE_URL}delete-expense/${id}`)
+        getExpenses()
     }
 
 
@@ -39,10 +56,29 @@ export const GlobalProvider = ({children}) => {
         return totalM;
     }
 
-    console.log(totalMoney())
+    const totalExpense = () => {
+        let totalExp = 0;
+        expenses.forEach((expense) =>{
+            totalExp = totalExp + expense.amount;
+        })
+        return totalExp;
+    }
+
+    //console.log(totalMoney())
 
     return (
-        <GlobalContext.Provider value={{addIncome, getIncomes, incomes, deleteIncome, totalMoney}}>
+        <GlobalContext.Provider value={{
+            addIncome,
+            getIncomes, 
+            incomes, 
+            deleteIncome, 
+            totalMoney,
+            addExpense,
+            getExpenses,
+            expenses,
+            deleteExpense,
+            totalExpense
+            }}>
             {children}
         </GlobalContext.Provider>
     )
