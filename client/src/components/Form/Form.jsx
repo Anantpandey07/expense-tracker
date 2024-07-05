@@ -8,7 +8,7 @@ import { plus } from '../../utils/Icons';
 
 function Form() {
 
-    const {addIncome, getIncomes} = useGlobalContext()
+    const {addIncome, getIncomes, err} = useGlobalContext()
 
     const [inputState, setInputState] = useState({
         title: '',
@@ -39,6 +39,7 @@ function Form() {
 
   return (
     <FormStyled onSubmit={handleSubmit}>
+        {/* {err && <p>{err}</p>} */}
         <div className='input-con'>
            <input 
            type='text'

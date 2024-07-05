@@ -12,7 +12,8 @@ export const GlobalProvider = ({children}) => {
     const [err, setErr] = useState(null)
 
     const addIncome = async (income) =>{
-        const response = await axios.post(`${BASE_URL}add-income`, income).catch((er) =>{
+        const response = await axios.post(`${BASE_URL}add-income`, income)
+        .catch((er) =>{
             setErr(er.response.data.message)
         })
         getIncomes()
@@ -74,7 +75,7 @@ export const GlobalProvider = ({children}) => {
             return new Date(b.createdAt) - new Date(a.createdAt)
         })
 
-        return history
+        return history.slice(0, 4);
     }
 
     //console.log(totalMoney())
@@ -93,6 +94,7 @@ export const GlobalProvider = ({children}) => {
             totalExpense,
             remainBalance,
             transactionHistory,
+            err,
             }}>
             {children}
         </GlobalContext.Provider>
