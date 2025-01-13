@@ -67,7 +67,6 @@ function Chart() {
             return dateFormat(date);
         }),
 
-
         datasets: [
             {
                 label: 'Expense',

@@ -4,7 +4,7 @@ const ExpenseSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        trim: true,
+        trim: true, //  (removes whitespace from both ends of the string).
         maxLength: 50
     },
     amount: {
@@ -20,7 +20,6 @@ const ExpenseSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
-        trim: true
     },
     category: {
         type: String,
